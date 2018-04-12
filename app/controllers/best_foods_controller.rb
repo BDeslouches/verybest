@@ -1,6 +1,7 @@
 class BestFoodsController < ApplicationController
   def index
-    @best_foods = BestFood.page(params[:page]).per(10)
+    @q = BestFood.ransack(params[:q])
+    @best_foods = @q.result(:distinct => true).includes(:location, :best_spot).page(params[:page]).per(10)
 
     render("best_foods/index.html.erb")
   end
