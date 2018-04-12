@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Best foods
+    <a href="/best_foods/new" class="btn btn-lg btn-success">New Best food</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Dish</th>
+        <th>Venue</th>
+        <th>Isbest</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @best_foods.each do |best_food| %>
+      <tr>
+        <td><%= best_food.dish_id %></td>
+        <td><%= best_food.venue_id %></td>
+        <td><%= best_food.isbest %></td>
+        <td>
+          <a href="/best_foods/<%= best_food.id %>" class="btn btn-primary">Show</a>
+          <a href="/best_foods/<%= best_food.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_best_food/<%= best_food.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
