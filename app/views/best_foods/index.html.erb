@@ -17,8 +17,20 @@
 
       <% @best_foods.each do |best_food| %>
       <tr>
-        <td><%= best_food.location.created_at %></td>
-        <td><%= best_food.best_spot.created_at %></td>
+        <td>
+          <% if best_food.location.present? %>
+            <a href="/dishes/<%= best_food.location.id %>">
+              <%= best_food.location.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if best_food.best_spot.present? %>
+            <a href="/venues/<%= best_food.best_spot.id %>">
+              <%= best_food.best_spot.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= best_food.isbest %></td>
         <td>
           <a href="/best_foods/<%= best_food.id %>" class="btn btn-primary">Show</a>
