@@ -23,3 +23,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Venue has many best_foods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Best Foods
+      </li>
+
+      <% @venue.best_foods.each do |best_food| %>
+        <li class="list-group-item">
+          <a href="/best_foods/<%= best_food.id %>">
+            <%= best_food.dish_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/best_foods/<%= best_food.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/best_foods/<%= best_food.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_best_food/<%= best_food.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
