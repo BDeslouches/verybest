@@ -17,7 +17,7 @@
 
       <% @best_foods.each do |best_food| %>
       <tr>
-        <td><%= best_food.dish_id %></td>
+        <td><%= best_food.location.created_at %></td>
         <td><%= best_food.venue_id %></td>
         <td><%= best_food.isbest %></td>
         <td>
