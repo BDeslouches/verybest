@@ -18,7 +18,7 @@
       <% @best_foods.each do |best_food| %>
       <tr>
         <td><%= best_food.location.created_at %></td>
-        <td><%= best_food.venue_id %></td>
+        <td><%= best_food.best_spot.created_at %></td>
         <td><%= best_food.isbest %></td>
         <td>
           <a href="/best_foods/<%= best_food.id %>" class="btn btn-primary">Show</a>
