@@ -1,4 +1,6 @@
 ActiveAdmin.register BestFood do
+
+ permit_params :dish_id, :venue_id, :isbest
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
